@@ -7,13 +7,13 @@ import numpy as np
 parser = argparse.ArgumentParser(description='This program computes the classical hirshfeld charges of a molecular system.')
 
 parser.add_argument('--mol', type=str, dest='filename',
-                    help='Path to molecular structure in xyz format')
+                    help='Path to molecular structure in xyz format', required=True)
 parser.add_argument('--auxbasis', type=str, dest='auxbasis',
-                    help='Basis set used for decomposition')
+                    help='Basis set used for decomposition', required=True)
 parser.add_argument('--coeff', type=str, dest='coeff_mol',
-                    help='Coefficient for the system')
+                    help='Coefficient for the system', required=True)
 parser.add_argument('--sphauxbasis', type=str, dest='sphauxbasis',
-                    help='Basis set for spherical atoms')
+                    help='Basis set for spherical atoms', required=True)
 parser.add_argument('--sphcoeff', type=str, dest='coeff_sph', default="./atoms/",
                     help='Path to the directory containig the spherical atom coefficients')
 parser.add_argument('--charge', type=int, nargs='?', dest='charge', default=0,
@@ -128,9 +128,9 @@ def main():
     sph_coeff = {}
     for i in uniq_el:
         if not args.coeff_sph.endswith("/"):
-            sph_coeff[i] = np.load(args.coeff_sph+"/"+"coeff_"+i+".npy")
+            sph_coeff[i] = np.load(args.coeff_sph+"/"+"J_coeff_"+i+"_"+args.sphauxbasis+".npy")
         else:
-            sph_coeff[i] = np.load(args.coeff_sph+"coeff_"+i+".npy")
+            sph_coeff[i] = np.load(args.coeff_sph+"J_coeff_"+i+"_"+args.sphauxbasis+".npy")
 
     # Get classical hirshfeld charges
     

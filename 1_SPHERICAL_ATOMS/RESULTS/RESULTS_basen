@@ -1,0 +1,893 @@
+adzp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0122925100145959 adzp
+Saving coefficients
+ahlrichs_cfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9839645834925346 ahlrichs_cfit
+Saving coefficients
+ano
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.000038778199997 ano
+Saving coefficients
+aqzp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9998160965904164 aqzp
+Saving coefficients
+atzp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9989237830557497 atzp
+Saving coefficients
+aug-cc-pv5z
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9999988560062631 aug-cc-pv5z
+Saving coefficients
+aug-cc-pv5z-dk
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9999990000782547 aug-cc-pv5z-dk
+Saving coefficients
+aug-cc-pv5z-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9997134760716561 aug-cc-pv5z-jkfit
+Saving coefficients
+aug-cc-pV5Z_MP2FIT
+Projecting DM of atom. H
+aug-cc-pV5Z-PP
+Projecting DM of atom. H
+aug-cc-pvdz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0133069318101346 aug-cc-pvdz
+Saving coefficients
+aug-cc-pvdz-dk
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0133058692932284 aug-cc-pvdz-dk
+Saving coefficients
+aug-cc-pvdz-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9997134760716561 aug-cc-pvdz-jkfit
+Saving coefficients
+aug-cc-pvdzp-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9838255982141031 aug-cc-pvdzp-jkfit
+Saving coefficients
+aug-cc-pVDZ-PP
+Projecting DM of atom. H
+aug-cc-pvdzp-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9816288760039658 aug-cc-pvdzp-ri
+Saving coefficients
+aug-cc-pvdz-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9976853900612513 aug-cc-pvdz-ri
+Saving coefficients
+aug-cc-pvqz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0001336032447545 aug-cc-pvqz
+Saving coefficients
+aug-cc-pVQZ-DK3
+Projecting DM of atom. H
+aug-cc-pvqz-dk
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0001334320345279 aug-cc-pvqz-dk
+Saving coefficients
+aug-cc-pvqz-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9997134760716561 aug-cc-pvqz-jkfit
+Saving coefficients
+aug-cc-pVQZ_MP2FIT
+Projecting DM of atom. H
+aug-cc-pVQZ-PP
+Projecting DM of atom. H
+aug-cc-pvqz-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0002434059315375 aug-cc-pvqz-ri
+Saving coefficients
+aug-cc-pvtz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9984341639702012 aug-cc-pvtz
+Saving coefficients
+aug-cc-pVTZ-DK3
+Projecting DM of atom. H
+aug-cc-pvtz-dk
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.998434569699372 aug-cc-pvtz-dk
+Saving coefficients
+aug-cc-pvtz-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9997134760716561 aug-cc-pvtz-jkfit
+Saving coefficients
+aug-cc-pVTZ-PP
+Projecting DM of atom. H
+aug-cc-pvtz-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0004065408949483 aug-cc-pvtz-ri
+Saving coefficients
+aug-cc-pwcv5z
+Projecting DM of atom. H
+aug-cc-pwcv5z-dk
+Projecting DM of atom. H
+aug-cc-pwcvdz
+Projecting DM of atom. H
+aug-cc-pwcvqz
+Projecting DM of atom. H
+aug-cc-pwCVQZ-DK3
+Projecting DM of atom. H
+aug-cc-pwCVQZ-DK
+Projecting DM of atom. H
+aug-cc-pwcvtz
+Projecting DM of atom. H
+aug-cc-pwCVTZ-DK3
+Projecting DM of atom. H
+aug-cc-pwCVTZ-DK
+Projecting DM of atom. H
+aug-cc-pwCVTZ_MP2FIT
+Projecting DM of atom. H
+aug-pc-0
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0006483237438781 aug-pc-0
+Saving coefficients
+aug-pc-1
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0137035875387832 aug-pc-1
+Saving coefficients
+aug-pc-2
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9966245003670766 aug-pc-2
+Saving coefficients
+aug-pc-3
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9999356440852792 aug-pc-3
+Saving coefficients
+aug-pc-4
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.000040323222566 aug-pc-4
+Saving coefficients
+aug-pcseg-0
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.000987618208029 aug-pcseg-0
+Saving coefficients
+aug-pcseg-1
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0137737560938018 aug-pcseg-1
+Saving coefficients
+aug-pcseg-2
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9966282726995828 aug-pcseg-2
+Saving coefficients
+aug-pcseg-3
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0018295979689407 aug-pcseg-3
+Saving coefficients
+aug-pcseg-4
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9995079889639639 aug-pcseg-4
+Saving coefficients
+bfd_pp
+Projecting DM of atom. H
+bfd_v5z
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0056089163408168 bfd_v5z
+Saving coefficients
+bfd_vdz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.089032014025751 bfd_vdz
+Saving coefficients
+bfd_vqz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0315316996956199 bfd_vqz
+Saving coefficients
+bfd_vtz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0894330362567446 bfd_vtz
+Saving coefficients
+Burkatzi-Filippi-Dolg-PP
+Projecting DM of atom. H
+cc-pCV5Z
+Projecting DM of atom. H
+cc-pCV6Z
+Projecting DM of atom. H
+cc-pCVDZ
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9815836311978866 cc-pCVDZ
+Saving coefficients
+cc-pCVQZ
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9999670919030718 cc-pCVQZ
+Saving coefficients
+cc-pCVTZ
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0024806443137393 cc-pCVTZ
+Saving coefficients
+cc-pv5z
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0000067441772702 cc-pv5z
+Saving coefficients
+cc-pv5z-dk
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0000065579441275 cc-pv5z-dk
+Saving coefficients
+cc-pv5z-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9838255982141031 cc-pv5z-jkfit
+Saving coefficients
+cc-pV5Z_MP2FIT
+Projecting DM of atom. H
+cc-pv5z-pp
+Projecting DM of atom. H
+cc-pv5z-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9929746343924186 cc-pv5z-ri
+Saving coefficients
+cc-pvdz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9815836311978866 cc-pvdz
+Saving coefficients
+cc-pvdz-dk
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9815851256602156 cc-pvdz-dk
+Saving coefficients
+cc-pvdz_fit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0000644983074178 cc-pvdz_fit
+Saving coefficients
+cc-pvdz-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9838255982141031 cc-pvdz-jkfit
+Saving coefficients
+cc-pvdz-pp
+Projecting DM of atom. H
+cc-pVDZ-PP-NR
+Projecting DM of atom. H
+cc-pvdz-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9816288760039658 cc-pvdz-ri
+Saving coefficients
+cc-pvqz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9999670919030718 cc-pvqz
+Saving coefficients
+cc-pVQZ-DK3
+Projecting DM of atom. H
+cc-pvqz-dk
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9999673188056319 cc-pvqz-dk
+Saving coefficients
+cc-pvqz-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9838255982141031 cc-pvqz-jkfit
+Saving coefficients
+cc-pVQZ_MP2FIT
+Projecting DM of atom. H
+cc-pvqz-pp
+Projecting DM of atom. H
+cc-pvqz-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9923145888204972 cc-pvqz-ri
+Saving coefficients
+cc-pvtz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0024806443137393 cc-pvtz
+Saving coefficients
+cc-pVTZ-DK3
+Projecting DM of atom. H
+cc-pvtz-dk
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0024800946480377 cc-pvtz-dk
+Saving coefficients
+cc-pvtz_fit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9998152900775482 cc-pvtz_fit
+Saving coefficients
+cc-pvtz-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9838255982141031 cc-pvtz-jkfit
+Saving coefficients
+cc-pvtz-pp
+Projecting DM of atom. H
+cc-pVTZ-PP-NR
+Projecting DM of atom. H
+cc-pvtz-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9834089298964913 cc-pvtz-ri
+Saving coefficients
+cc-pwCV5Z
+Projecting DM of atom. H
+cc-pwCV5Z-DK
+Projecting DM of atom. H
+cc-pwCV5Z-PP
+Projecting DM of atom. H
+cc-pwCVDZ
+Projecting DM of atom. H
+cc-pwCVDZ-DK
+Projecting DM of atom. H
+cc-pwCVDZ-PP
+Projecting DM of atom. H
+cc-pwCVQZ
+Projecting DM of atom. H
+cc-pwCVQZ-DK3
+Projecting DM of atom. H
+cc-pwCVQZ-DK
+Projecting DM of atom. H
+cc-pwCVQZ-PP
+Projecting DM of atom. H
+cc-pwCVTZ
+Projecting DM of atom. H
+cc-pwCVTZ-DK3
+Projecting DM of atom. H
+cc-pwCVTZ-DK
+Projecting DM of atom. H
+cc-pwCVTZ_MP2FIT
+Projecting DM of atom. H
+cc-pwCVTZ-PP
+Projecting DM of atom. H
+crenbl
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0021909606539965 crenbl
+Saving coefficients
+crenbs
+Projecting DM of atom. H
+crystal-cc-pvdz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9703165631385401 crystal-cc-pvdz
+Saving coefficients
+def2-qzvp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9994930588011708 def2-qzvp
+Saving coefficients
+def2-qzvpd
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9994930588011708 def2-qzvpd
+Saving coefficients
+def2-qzvpp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9994930588011708 def2-qzvpp
+Saving coefficients
+def2-qzvppd
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9994930588011708 def2-qzvppd
+Saving coefficients
+def2-qzvppd-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9989670214882085 def2-qzvppd-ri
+Saving coefficients
+def2-qzvpp-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9946523339780025 def2-qzvpp-ri
+Saving coefficients
+def2-qzvp-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9946523339780025 def2-qzvp-ri
+Saving coefficients
+def2-svp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9815796592253369 def2-svp
+Saving coefficients
+def2-svpd
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9815796592253369 def2-svpd
+Saving coefficients
+def2-svpd-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0013399087557764 def2-svpd-ri
+Saving coefficients
+def2-svp-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9843436591018268 def2-svp-ri
+Saving coefficients
+def2-tzvp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0024750799464808 def2-tzvp
+Saving coefficients
+def2-tzvpd
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0024750799464808 def2-tzvpd
+Saving coefficients
+def2-tzvpd-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9979094722423794 def2-tzvpd-ri
+Saving coefficients
+def2-tzvpp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0024750799464808 def2-tzvpp
+Saving coefficients
+def2-tzvppd
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0024750799464806 def2-tzvppd
+Saving coefficients
+def2-tzvppd-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9979094722423785 def2-tzvppd-ri
+Saving coefficients
+def2-tzvpp-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9863205689058799 def2-tzvpp-ri
+Saving coefficients
+def2-tzvp-ri
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9863205689058809 def2-tzvp-ri
+Saving coefficients
+def2-universal-jfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9941377708287409 def2-universal-jfit
+Saving coefficients
+def2-universal-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9851795891381581 def2-universal-jkfit
+Saving coefficients
+demon_cfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9824337986537763 demon_cfit
+Saving coefficients
+DgaussA1_dft_cfit
+Projecting DM of atom. H
+DgaussA1_dft_xfit
+Projecting DM of atom. H
+DgaussA2_dft_cfit
+Projecting DM of atom. H
+DgaussA2_dft_xfit
+Projecting DM of atom. H
+dz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9912680945403558 dz
+Saving coefficients
+dzp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9836380990565645 dzp
+Saving coefficients
+dzp-dkh
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9829577552998703 dzp-dkh
+Saving coefficients
+dzvp2
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9895945473735182 dzvp2
+Saving coefficients
+dzvp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9895945473735182 dzvp
+Saving coefficients
+heavy-aug-cc-pvdz-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9838255982141031 heavy-aug-cc-pvdz-jkfit
+Saving coefficients
+heavy-aug-cc-pvtz-jkfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9838255982141031 heavy-aug-cc-pvtz-jkfit
+Saving coefficients
+lanl08
+Projecting DM of atom. H
+lanl2dz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9912768673671061 lanl2dz
+Saving coefficients
+lanl2tz
+Projecting DM of atom. H
+pc-0
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.000932967134279 pc-0
+Saving coefficients
+pc-1
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9816199184128612 pc-1
+Saving coefficients
+pc-2
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0047830372451043 pc-2
+Saving coefficients
+pc-3
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0000575105926566 pc-3
+Saving coefficients
+pc-4
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9999341492329076 pc-4
+Saving coefficients
+pcseg-0
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0009336816845031 pcseg-0
+Saving coefficients
+pcseg-1
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9816197192791268 pcseg-1
+Saving coefficients
+pcseg-2
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.004778801139366 pcseg-2
+Saving coefficients
+pcseg-3
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9976133425683551 pcseg-3
+Saving coefficients
+pcseg-4
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.000597947399348 pcseg-4
+Saving coefficients
+pob-tzvp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9986101429921048 pob-tzvp
+Saving coefficients
+pob-tzvpp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.999743516267646 pob-tzvpp
+Saving coefficients
+qzp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.000256676233511 qzp
+Saving coefficients
+qzp-dkh
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.00026218627276 qzp-dkh
+Saving coefficients
+roos-dz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0162176784836334 roos-dz
+Saving coefficients
+roos-tz
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0172066284087316 roos-tz
+Saving coefficients
+sarc-dkh2
+Projecting DM of atom. H
+sbkjc
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9983720208201528 sbkjc
+Saving coefficients
+sto-3g
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.1135856662916988 sto-3g
+Saving coefficients
+sto-6g
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.1309800736661353 sto-6g
+Saving coefficients
+stuttgart_dz
+Projecting DM of atom. H
+stuttgart_rsc
+Projecting DM of atom. H
+tzp
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.001533622441002 tzp
+Saving coefficients
+tzp-dkh
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 1.0016320903888738 tzp-dkh
+Saving coefficients
+tzv
+Projecting DM of atom. H
+weigend_cfit
+Projecting DM of atom. H
+Computing integrals.
+Computing coefficients.
+Checking number of electrons.
+Integrated number of electrons: 0.9941377708287409 weigend_cfit
+Saving coefficients

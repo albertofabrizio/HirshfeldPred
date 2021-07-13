@@ -180,7 +180,7 @@ def main():
     # Check the number of electrons after density-fitting.
     print('Checking number of electrons.')
     n = number_of_electrons(c, auxmol)
-    print("Integrated number of electrons:", n)
+    print("Integrated number of electrons:", n, args.auxbase)
 
     print('Saving coefficients')
     if args.isS:
@@ -189,8 +189,12 @@ def main():
         name = 'J_coeff_'        
 
     base = os.path.basename(args.auxbase)
+
+    # Only save the spherical part (non-zero)
+    bas_info = np.array(auxmol._bas)
+    n_spherical = bas_info[bas_info[:,1] == 0][:,3].sum()
     
-    np.save(name+args.atm+'_'+base, c)
+    np.save(name+args.atm+'_'+base, c[:n_spherical])
 
 
 if __name__ == "__main__":
