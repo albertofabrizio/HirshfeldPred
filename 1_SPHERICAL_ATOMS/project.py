@@ -91,7 +91,7 @@ def number_of_electrons(rho, mol):
 
     # Get information about the basis
     bas_info = np.array(mol._bas)
-    basis = mol._basis[args.atm]
+    basis = mol._basis[args.atm.capitalize()]
 
     # Identify spherical GTOs
     spherical_info = bas_info[bas_info[:,1] == 0]

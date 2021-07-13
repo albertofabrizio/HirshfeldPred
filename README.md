@@ -25,7 +25,7 @@ optional arguments: \
   --basis BASE        The name of the basis set used for the DM computation. \
   --auxbasis AUXBASE  The name of the basis set (or path) for the projection. \
   --isS               Whether or not using the overlap metric for projection. \
-  --isfile            Whether or not the auxbasis is the name of an external file to read [default: False]. \
+  --isfile            Whether or not the auxbasis is the name of an external file to read [default: False]. 
 
 
 
