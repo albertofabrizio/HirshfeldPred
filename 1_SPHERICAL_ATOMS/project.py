@@ -73,6 +73,7 @@ def number_of_electrons(rho, mol):
 
     # Loop over all the contracted spherical GTOs    
     nel = 0
+    start = 0
     for n in range(spherical_info.shape[0]):
         primitives = np.array(basis[n][1:])
 
@@ -93,15 +94,19 @@ def number_of_electrons(rho, mol):
                 ss += cs[ia] * cs[ib] * pow(np.pi/(esa + esb),1.5)                
 
         fact = 1/np.sqrt(ss)
-        cs = np.einsum('pi, p -> pi', cs, fact)
+
+        for i in range(cs.shape[1]):
+            cs[:,i] *= fact[i]
+
 
         # Compute integral
         integral = pow(np.pi/es, 1.5)
         integral = np.dot(integral,cs)
 
         # Compute number of electrons
-        stop = n + integral.shape[0]
-        nel += np.dot(rho[n:stop],integral)
+        stop = start + integral.shape[0]
+        nel += np.dot(rho[start:stop],integral)
+        start = stop
     
     return nel
 
