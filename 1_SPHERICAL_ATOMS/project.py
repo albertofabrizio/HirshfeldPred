@@ -1,6 +1,7 @@
 import numpy as np
 from pyscf import gto, dft
 import argparse
+import os
 
 ########################## Parsing user defined input ##########################
 
@@ -8,10 +9,10 @@ parser = argparse.ArgumentParser(description="This programs projects the spheric
 
 parser.add_argument('--atom', type=str, required=True, dest='atm', help="The periodic table symbol for the atom.")
 parser.add_argument('--dm', type=str, required=True, dest='dmfile', help="The path for the density matrix.")
-parser.add_argument('--basis', type=str, required=True, dest='base', help="The name of the basis set used for the DM computation.")
+parser.add_argument('--basis', type=str, required=True, dest='base', help="The name of the basis set (or path) used for the DM computation.")
 parser.add_argument('--auxbasis', type=str, required=True, dest='auxbase', help="The name of the basis set for the projection.")
 parser.add_argument('--isS', dest='isS', help="Whether or not using the overlap metric for projection.", default = False, action='store_true')
-parser.add_argument('--isfile', type=bool, dest='isfile', help="Whether or not the auxbasis is the name of an external file to read [default: False].", default = False)
+parser.add_argument('--isfile', dest='isfile', help="Whether or not the auxbasis is the name of an external file to read [default: False].", action='store_true')
 
 args = parser.parse_args()
 
@@ -51,7 +52,7 @@ def get_coeff_J(dm, eri2c, eri3c):
     c = np.linalg.solve(eri2c, rho)
     return c
 
-def get_coeff_S(mol, auxmol, dm):
+def get_coeff_S(mol, auxmol, S, dm):
     """ Compute the expansion coefficients using the S-metric.
     
     Returns:
@@ -74,9 +75,6 @@ def get_coeff_S(mol, auxmol, dm):
     # Projection integrals
     rho = np.einsum('pi, pj, ij -> p', ao, ao, dm)
     proj = np.einsum('p, p, pk -> k', rho, grid_weights, ao_aux)
-
-    # Overlap integral
-    S = auxmol.intor('int1e_ovlp_sph')
 
     # Coefficients
     c = np.linalg.solve(S, proj)
@@ -153,7 +151,15 @@ def main():
     
     # Instance pyscf mol object
     mol = gto.M(atom=atm+''' 0 0 0''', basis=args.base, spin=spin_dict[atm])
-    auxmol = gto.M(atom=atm+''' 0 0 0''', basis=args.auxbase, spin=spin_dict[atm])
+
+    # Read or load the auxiliary basis set
+    if args.isfile:
+        with open( args.auxbase,'r') as f:
+            auxbasis = eval(f.read())
+    else:
+        auxbasis = args.auxbase
+
+    auxmol = gto.M(atom=atm+''' 0 0 0''', basis=auxbasis, spin=spin_dict[atm])
 
     # Loading the density matrix
     dm = np.load(args.dmfile)
@@ -167,7 +173,7 @@ def main():
 
     if args.isS:
         print("Warning: coefficients using the overlap metric are less accurate and are computed by numerical integration.")
-        c = get_coeff_S(mol, auxmol, dm)
+        c = get_coeff_S(mol, auxmol, S, dm)
     else:
         c = get_coeff_J(dm, eri2c, eri3c)
         
@@ -181,8 +187,10 @@ def main():
         name = 'S_coeff_'
     else:
         name = 'J_coeff_'        
+
+    base = os.path.basename(args.auxbase)
     
-    np.save(name+args.atm+'_'+args.auxbase, c)
+    np.save(name+args.atm+'_'+base, c)
 
 
 if __name__ == "__main__":
