@@ -9,8 +9,8 @@ parser = argparse.ArgumentParser(description="This programs projects the spheric
 
 parser.add_argument('--atom', type=str, required=True, dest='atm', help="The periodic table symbol for the atom.")
 parser.add_argument('--dm', type=str, required=True, dest='dmfile', help="The path for the density matrix.")
-parser.add_argument('--basis', type=str, required=True, dest='base', help="The name of the basis set (or path) used for the DM computation.")
-parser.add_argument('--auxbasis', type=str, required=True, dest='auxbase', help="The name of the basis set for the projection.")
+parser.add_argument('--basis', type=str, required=True, dest='base', help="The name of the basis set used for the DM computation.")
+parser.add_argument('--auxbasis', type=str, required=True, dest='auxbase', help="The name of the basis set (or path) for the projection.")
 parser.add_argument('--isS', dest='isS', help="Whether or not using the overlap metric for projection.", default = False, action='store_true')
 parser.add_argument('--isfile', dest='isfile', help="Whether or not the auxbasis is the name of an external file to read [default: False].", action='store_true')
 
