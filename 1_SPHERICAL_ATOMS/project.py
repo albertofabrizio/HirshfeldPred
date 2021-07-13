@@ -1,5 +1,5 @@
 import numpy as np
-from pyscf import gto
+from pyscf import gto, dft
 import argparse
 
 ########################## Parsing user defined input ##########################
@@ -10,7 +10,7 @@ parser.add_argument('--atom', type=str, required=True, dest='atm', help="The per
 parser.add_argument('--dm', type=str, required=True, dest='dmfile', help="The path for the density matrix.")
 parser.add_argument('--basis', type=str, required=True, dest='base', help="The name of the basis set used for the DM computation.")
 parser.add_argument('--auxbasis', type=str, required=True, dest='auxbase', help="The name of the basis set for the projection.")
-parser.add_argument('--isJ', type=bool, dest='isJ', help="Whether or not using the Coulomb metric for projection.", default = True)
+parser.add_argument('--isS', dest='isS', help="Whether or not using the overlap metric for projection.", default = False, action='store_true')
 parser.add_argument('--isfile', type=bool, dest='isfile', help="Whether or not the auxbasis is the name of an external file to read [default: False].", default = False)
 
 args = parser.parse_args()
@@ -51,10 +51,37 @@ def get_coeff_J(dm, eri2c, eri3c):
     c = np.linalg.solve(eri2c, rho)
     return c
 
-def overlap(a, b):
+def get_coeff_S(mol, auxmol, dm):
+    """ Compute the expansion coefficients using the S-metric.
+    
+    Returns:
+        The coefficients, 1D ndarray
 
+    """
 
-    return 0
+    # Grid Setup
+    g = dft.gen_grid.Grids(mol)
+    g.level = 3
+    g.build()
+
+    coords = g.coords
+    grid_weights = g.weights
+
+    # AO on grid
+    ao = dft.numint.eval_ao(mol, coords)
+    ao_aux = dft.numint.eval_ao(auxmol, coords)
+
+    # Projection integrals
+    rho = np.einsum('pi, pj, ij -> p', ao, ao, dm)
+    proj = np.einsum('p, p, pk -> k', rho, grid_weights, ao_aux)
+
+    # Overlap integral
+    S = auxmol.intor('int1e_ovlp_sph')
+
+    # Coefficients
+    c = np.linalg.solve(S, proj)
+
+    return c
 
 def number_of_electrons(rho, mol):
     """ Compute the number of electrons given coefficients for one atom.
@@ -98,7 +125,6 @@ def number_of_electrons(rho, mol):
         for i in range(cs.shape[1]):
             cs[:,i] *= fact[i]
 
-
         # Compute integral
         integral = pow(np.pi/es, 1.5)
         integral = np.dot(integral,cs)
@@ -138,18 +164,25 @@ def main():
 
     # Compute coefficients
     print('Computing coefficients.')
-    if args.isJ:
-        c = get_coeff_J(dm, eri2c, eri3c)
+
+    if args.isS:
+        print("Warning: coefficients using the overlap metric are less accurate and are computed by numerical integration.")
+        c = get_coeff_S(mol, auxmol, dm)
     else:
-        c = 0
+        c = get_coeff_J(dm, eri2c, eri3c)
         
     # Check the number of electrons after density-fitting.
     print('Checking number of electrons.')
     n = number_of_electrons(c, auxmol)
-    print(n)
+    print("Integrated number of electrons:", n)
 
     print('Saving coefficients')
-    np.save('coeff_'+args.atm, c)
+    if args.isS:
+        name = 'S_coeff_'
+    else:
+        name = 'J_coeff_'        
+    
+    np.save(name+args.atm+'_'+args.auxbase, c)
 
 
 if __name__ == "__main__":
