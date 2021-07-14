@@ -28,5 +28,21 @@ optional arguments: \
   --isfile            Whether or not the auxbasis is the name of an external file to read [default: False]. 
 
 
+## HIRSHFELD
 
+Compute the dominant Hirshfeld partial charges given spherical atoms and predicted densities.
+
+Usage:
+`hirshfeld_dominant.py [-h] --mol FILENAME --auxbasis AUXBASIS --coeff COEFF_MOL --sphbasis SPHBASIS [--sphcoeff COEFF_SPH] [--isS] [--isfile] [--charge [CHARGE]]`
+
+optional arguments: \
+  -h, --help            show this help message and exit \
+  --mol FILENAME        Path to molecular structure in xyz format \
+  --auxbasis AUXBASIS   Basis set used for decomposition \
+  --coeff COEFFMOL     Coefficient for the system \
+  --sphbasis SPHBASIS   Basis set for spherical atoms \
+  --sphcoeff COEFFSPH  Path to the directory containig the spherical atom coefficients \
+  --isS                 Whether or not the overlap metric was used for projection. \
+  --isfile              Whether or not the auxbasis is the name of an external file to read [default: False]. \
+  --charge [CHARGE]     (optional) Total charge of the system (default = 0) 
 

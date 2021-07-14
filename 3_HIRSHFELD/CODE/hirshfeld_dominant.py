@@ -5,7 +5,7 @@ import numpy as np
 import os
 
 ########################## Parsing user defined input ##########################
-parser = argparse.ArgumentParser(description='This program computes the classical hirshfeld charges of a molecular system.')
+parser = argparse.ArgumentParser(description='This program computes the dominant hirshfeld charges of a molecular system.')
 
 parser.add_argument('--mol', type=str, dest='filename',
                     help='Path to molecular structure in xyz format', required=True)
@@ -152,14 +152,13 @@ def main():
         else:
             sph_coeff[i] = np.load(args.coeff_sph+name+i+'_'+base+".npy")
 
-    # Get classical hirshfeld charges
+    # Get dominant hirshfeld charges
     
     q = hirsfheld_chrges(mol, sph_mol, coeff_mol, sph_coeff, sph_shell_start)
 
     # Get partial charges and save
 
     partial_charges = mol.atom_charges() - q
-    print(q)
     np.savetxt('partial_charges.dat', partial_charges, fmt="%4.2f")
 
 
