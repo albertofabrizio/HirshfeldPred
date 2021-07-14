@@ -2,6 +2,7 @@ import argparse
 from pyscf import gto, dft
 from pyscf.dft import numint
 import numpy as np
+import os
 
 ########################## Parsing user defined input ##########################
 parser = argparse.ArgumentParser(description='This program computes the classical hirshfeld charges of a molecular system.')
@@ -12,10 +13,17 @@ parser.add_argument('--auxbasis', type=str, dest='auxbasis',
                     help='Basis set used for decomposition', required=True)
 parser.add_argument('--coeff', type=str, dest='coeff_mol',
                     help='Coefficient for the system', required=True)
-parser.add_argument('--sphauxbasis', type=str, dest='sphauxbasis',
+
+parser.add_argument('--sphbasis', type=str, dest='sphbasis',
                     help='Basis set for spherical atoms', required=True)
 parser.add_argument('--sphcoeff', type=str, dest='coeff_sph', default="./atoms/",
                     help='Path to the directory containig the spherical atom coefficients')
+
+parser.add_argument('--isS', dest='isS', default = False, action='store_true',
+                    help="Whether or not the overlap metric was used for projection.")
+parser.add_argument('--isfile', dest='isfile', action='store_true',
+                    help="Whether or not the auxbasis is the name of an external file to read [default: False].")
+
 parser.add_argument('--charge', type=int, nargs='?', dest='charge', default=0,
                     help='(optional) Total charge of the system (default = 0)')
 
@@ -108,11 +116,15 @@ def main():
     xyz_filename = args.filename
     mol = readmol(xyz_filename, args.auxbasis, charge = args.charge)
 
-    # Load spherical atom basis and create a spherical molecule object
-    with open(args.sphauxbasis, 'r') as f:
-        s_basis = eval(f.read())
+    # Read or load the auxiliary basis set
+    if args.isfile:
+        with open( args.sphbasis,'r') as f:
+            sphbasis = eval(f.read())
+    else:
+        sphbasis = args.sphbasis
 
-    sph_mol = readmol(xyz_filename, s_basis, charge = args.charge)
+    sph_mol = readmol(xyz_filename, sphbasis, charge = args.charge)
+    
 
     # Store the starting index for each atom
     sph_shell_start = []
@@ -125,12 +137,20 @@ def main():
     # Load coefficients for each spherical atom
     uniq_el = set(mol.elements)
 
+    if args.isS:
+        name = 'S_coeff_'
+    else:
+        name = 'J_coeff_'
+
+    base = os.path.basename(args.sphbasis)
+
     sph_coeff = {}
     for i in uniq_el:
         if not args.coeff_sph.endswith("/"):
-            sph_coeff[i] = np.load(args.coeff_sph+"/"+"J_coeff_"+i+"_"+args.sphauxbasis+".npy")
+            sph_coeff[i] = np.load(args.coeff_sph+"/"+name+i+'_'+base+".npy")
+
         else:
-            sph_coeff[i] = np.load(args.coeff_sph+"J_coeff_"+i+"_"+args.sphauxbasis+".npy")
+            sph_coeff[i] = np.load(args.coeff_sph+name+i+'_'+base+".npy")
 
     # Get classical hirshfeld charges
     
