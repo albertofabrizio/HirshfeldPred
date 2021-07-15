@@ -13,7 +13,18 @@ optional arguments: \
   --atom ATM    The periodic table symbol for the atom. \
   --basis BASE  The name of the basis set for the computation. \
 
-and project the DM onto a specified basis set. 
+Compute the spherical averaged density matrix (DM) of all the elements up to Ar @ DFT level (user defined XC).
+
+Usage:
+`compute_DM_dft.py [-h] --atom ATM --basis BASE --func FUNC`
+
+optional arguments:\
+  -h, --help    show this help message and exit \
+  --atom ATM    The periodic table symbol for the atom. \
+  --basis BASE  The name of the basis set for the computation. \
+  --func FUNC   The chosen xc density functional. \
+
+Project the DM onto a specified basis set. 
 
 Usage:
 `project.py [-h] --atom ATM --dm DMFILE --basis BASE --auxbasis AUXBASE [--isS] [--isfile]`
@@ -29,7 +40,8 @@ optional arguments: \
 
 ## BASIS
 
-Store take a user defined basis set and save its spherical part in a json format.
+Take a user defined basis set and save its spherical part in a json format.
+
 Usage:
 `print_spherical_basis.py [-h] --atom ATM [ATM ...] --basis BASE`
 
@@ -38,13 +50,13 @@ optional arguments: \
   --atom ATM [ATM ...]  The periodic table symbol for the atom. \
   --basis BASE          The name of the basis set for the computation. \
 
-
 ## HIRSHFELD
 
 Compute the dominant Hirshfeld partial charges given spherical atoms and predicted densities.
 
 Usage:
-`hirshfeld_dominant.py [-h] --mol FILENAME --auxbasis AUXBASIS --coeff COEFF_MOL --sphbasis SPHBASIS [--sphcoeff COEFF_SPH] [--isS] [--isfile] [--charge [CHARGE]]`
+`hirshfeld_dominant.py [-h] --mol FILENAME --auxbasis AUXBASIS --coeff COEFF_MOL --sphbasis SPHBASIS [--sphcoeff COEFF_SPH] [--isS] [--isfile] [--isdft]
+                             [--func FUNC] [--charge [CHARGE]]`
 
 optional arguments: \
   -h, --help            show this help message and exit \
@@ -55,5 +67,13 @@ optional arguments: \
   --sphcoeff COEFFSPH  Path to the directory containig the spherical atom coefficients \
   --isS                 Whether or not the overlap metric was used for projection. \
   --isfile              Whether or not the auxbasis is the name of an external file to read [default: False]. \
+  --isdft               Whether or not the spherical DM originated from a DFT computation. \
+  --func FUNC           DFT functional used in the spherical DM computation. \
   --charge [CHARGE]     (optional) Total charge of the system (default = 0) 
+
+  Compute the classical Hirshfeld partial charges given spherical atoms and predicted densities.
+
+Usage:
+`hirshfeld_classical.py [-h] --mol FILENAME --auxbasis AUXBASIS --coeff COEFF_MOL --sphbasis SPHBASIS [--sphcoeff COEFF_SPH] [--isS] [--isfile] [--isdft]
+                             [--func FUNC] [--charge [CHARGE]]`
 
