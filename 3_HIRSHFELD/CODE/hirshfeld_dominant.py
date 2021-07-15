@@ -2,6 +2,7 @@ import argparse
 from pyscf import gto, dft
 from pyscf.dft import numint
 import numpy as np
+import json
 import os
 
 ########################## Parsing user defined input ##########################
@@ -124,7 +125,10 @@ def main():
     # Read or load the auxiliary basis set
     if args.isfile:
         with open( args.sphbasis,'r') as f:
-            sphbasis = eval(f.read())
+            if args.sphbasis.endswith('.json'):
+                sphbasis = json.load(f)
+            else:
+                sphbasis = eval(f.read())
     else:
         sphbasis = args.sphbasis
 
@@ -148,9 +152,9 @@ def main():
         name = 'J_coeff_'
 
     if args.isdft:
-        base = os.path.basename(args.sphbasis)+'_'+args.func
+        base = os.path.basename(os.path.splitext(args.sphbasis)[0])+'_'+args.func
     else:
-        base = os.path.basename(args.sphbasis)
+        base = os.path.basename(os.path.splitext(args.sphbasis)[0])
 
     sph_coeff = {}
     for i in uniq_el:
