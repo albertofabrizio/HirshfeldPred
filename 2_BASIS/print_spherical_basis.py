@@ -5,7 +5,7 @@ import argparse
 
 ########################## Parsing user defined input ##########################
 
-parser = argparse.ArgumentParser(description="This programs computes the spherical averaged density matrix @ HF level for a given atom and basis set.")
+parser = argparse.ArgumentParser(description="This programs takes as input a basis set and stores its spherical components in a json file.")
 
 parser.add_argument('--atom', type=str, nargs='+', required=True, dest='atm', help="The periodic table symbol for the atom.")
 parser.add_argument('--basis', type=str, required=True, dest='base', help="The name of the basis set for the computation.")

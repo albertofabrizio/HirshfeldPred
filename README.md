@@ -27,6 +27,17 @@ optional arguments: \
   --isS               Whether or not using the overlap metric for projection. \
   --isfile            Whether or not the auxbasis is the name of an external file to read [default: False]. 
 
+## BASIS
+
+Store take a user defined basis set and save its spherical part in a json format.
+Usage:
+`print_spherical_basis.py [-h] --atom ATM [ATM ...] --basis BASE`
+
+optional arguments: \
+  -h, --help            show this help message and exit. \
+  --atom ATM [ATM ...]  The periodic table symbol for the atom. \
+  --basis BASE          The name of the basis set for the computation. \
+
 
 ## HIRSHFELD
 
