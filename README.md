@@ -24,7 +24,7 @@ optional arguments:\
   --basis BASE  The name of the basis set for the computation. \
   --func FUNC   The chosen xc density functional. \
 
-**Project the DM onto a specified basis set. **
+**Project the DM onto a specified basis set.**
 
 Usage:
 `project.py [-h] --atom ATM --dm DMFILE --basis BASE --auxbasis AUXBASE [--isS] [--isfile]`
