@@ -6,7 +6,7 @@ import json
 import os
 
 ########################## Parsing user defined input ##########################
-parser = argparse.ArgumentParser(description='This program computes the classical hirshfeld charges of a molecular system.')
+parser = argparse.ArgumentParser(description='This program computes the dominant hirshfeld charges of a molecular system.')
 
 parser.add_argument('--mol', type=str, dest='filename',
                     help='Path to molecular structure in xyz format', required=True)
@@ -33,6 +33,11 @@ parser.add_argument('--func', dest='func', type=str,
 parser.add_argument('--charge', type=int, nargs='?', dest='charge', default=0,
                     help='(optional) Total charge of the system (default = 0)')
 
+parser.add_argument('--rad', type=int, dest='rad', default=75,
+                    help='Number of points in the radial grid (default = 75)')
+parser.add_argument('--ang', type=int, dest='ang', default=302,
+                    help='Number of points in the angular grid (default = 302)')
+
 args = parser.parse_args()
 
 ########################## Helper Functions ##########################
@@ -51,10 +56,11 @@ def readmol(fin, basis, charge=0):
 
     return mol
 
-def make_grid(mol, levl = 3):
+def make_grid(mol, rad, ang):
     """ Construct an atom centered Becke grid """
     g = dft.gen_grid.Grids(mol)
-    g.level = levl
+    for a, b in mol._basis.items():
+        g.atom_grid = {a : (rad, ang)}
     g.build()
     coords = g.coords
     grid_weights = g.weights
@@ -70,10 +76,10 @@ def ao_on_grid(mol,sph_mol, coords):
     return ao, ao_sph
 
 def hirsfheld_chrges(mol, sph_mol, coeff_mol, sph_coeff, sph_shell_start):
-    """ Compute Classical Hirshfeld Charges"""
+    """ Compute Dominant Hirshfeld Charges"""
 
     # Make the grid
-    coords, weights = make_grid(mol)
+    coords, weights = make_grid(mol, args.rad, args.ang)
 
     # Compute the value of orbitals at each point of the grid
     ao, ao_sph = ao_on_grid(mol,sph_mol,coords)
@@ -82,38 +88,34 @@ def hirsfheld_chrges(mol, sph_mol, coeff_mol, sph_coeff, sph_shell_start):
     dens = np.dot(ao, coeff_mol)
 
     # Compute the integrand
-    intgrd = np.zeros((sph_mol.natm, ao.shape[0]))
-    
-    all_sph_coeff = []
+    intgrd = np.zeros((sph_mol.natm, ao_sph.shape[0]))
+
     for i in range(sph_mol.natm):
 
         # Lookup element in dictionary of spherical coefficients
         key = sph_mol.elements[i]
         coeff_i = sph_coeff[key]
 
-        # Append coefficients for atom in the total list
-        all_sph_coeff.append(coeff_i)
-
-        # Compute numerator
-
+        # Compute shell start and end for each atom
         start = sph_shell_start[i]
         if i < sph_mol.natm-1:
             end = sph_shell_start[i+1]
         else:
             end = None
 
-        intgrd[i,:] = np.multiply(np.dot(ao_sph[:,start:end], coeff_i), dens)
+        # Compute rho pro-atomic
+        intgrd[i,:] = np.dot(ao_sph[:,start:end], coeff_i)
 
-    # Compute denominator
+    # Find the dominant atom at each point
+    idx = np.argmax(intgrd, axis=0)  
+    intgrd.fill(0)
 
-    flat_sph_coeff = [item for sublist in all_sph_coeff for item in sublist]
-    all_sph_coeff = np.array(flat_sph_coeff)
-    
-    den = np.dot(ao_sph, all_sph_coeff) + 1E-15 # Avoid division by zero
+    # Naive implementation, rethink it later
+    for point in range(intgrd.shape[1]):
+        intgrd[idx[point], point] = 1.0
 
-    # Divide and integrate.
-
-    q = np.dot( np.divide(intgrd, den), weights)
+    # Multiply and integrate.
+    q = np.dot( np.multiply(intgrd, dens), weights)
     
     return q
 
