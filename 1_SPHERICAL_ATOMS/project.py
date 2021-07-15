@@ -13,6 +13,9 @@ parser.add_argument('--basis', type=str, required=True, dest='base', help="The n
 parser.add_argument('--auxbasis', type=str, required=True, dest='auxbase', help="The name of the basis set (or path) for the projection.")
 parser.add_argument('--isS', dest='isS', help="Whether or not using the overlap metric for projection.", default = False, action='store_true')
 parser.add_argument('--isfile', dest='isfile', help="Whether or not the auxbasis is the name of an external file to read [default: False].", action='store_true')
+parser.add_argument('--isdft', dest='isdft', action='store_true', help="Whether or not the spherical DM originated from a DFT computation.")
+parser.add_argument('--func', dest='func', type=str, help="DFT functional used in the spherical DM computation.")
+
 
 args = parser.parse_args()
 
@@ -188,7 +191,10 @@ def main():
     else:
         name = 'J_coeff_'        
 
-    base = os.path.basename(args.auxbase)
+    if args.isdft:
+        base = os.path.basename(args.auxbase)+'_'+args.func
+    else:
+        base = os.path.basename(args.auxbase)
 
     # Only save the spherical part (non-zero)
     bas_info = np.array(auxmol._bas)

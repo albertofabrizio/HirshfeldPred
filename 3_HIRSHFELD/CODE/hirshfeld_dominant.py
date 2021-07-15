@@ -24,6 +24,11 @@ parser.add_argument('--isS', dest='isS', default = False, action='store_true',
 parser.add_argument('--isfile', dest='isfile', action='store_true',
                     help="Whether or not the auxbasis is the name of an external file to read [default: False].")
 
+parser.add_argument('--isdft', dest='isdft', action='store_true',
+                    help="Whether or not the spherical DM originated from a DFT computation.")
+parser.add_argument('--func', dest='func', type=str,
+                    help="DFT functional used in the spherical DM computation.")
+
 parser.add_argument('--charge', type=int, nargs='?', dest='charge', default=0,
                     help='(optional) Total charge of the system (default = 0)')
 
@@ -142,7 +147,10 @@ def main():
     else:
         name = 'J_coeff_'
 
-    base = os.path.basename(args.sphbasis)
+    if args.isdft:
+        base = os.path.basename(args.sphbasis)+'_'+args.func
+    else:
+        base = os.path.basename(args.sphbasis)
 
     sph_coeff = {}
     for i in uniq_el:
