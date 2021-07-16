@@ -5,6 +5,7 @@ import argparse
 ##### CONSTANTS #####
 
 AU2DEBYE = 2.541746
+AU2BUCK = 1.345044
 
 ########################## Parsing user defined input ##########################
 
@@ -38,6 +39,20 @@ def dipole_moment(q,r,origin):
     """ Compute the (discrete) dipole moment given the partial charges. """
     return np.dot(q, r-origin)
 
+def quad_moment(q,r,origin):
+    """ Compute the (discrete) quadrupole moment given the partial charges. """
+    r -= origin
+    norms = np.linalg.norm(r, axis=1)**2
+
+    internal = 3*np.einsum('li,lj -> lij',r,r)
+
+    for i in range(norms.shape[0]):
+        for k in range(3):
+            internal[i,k,k] -= norms[i]
+
+    quad = np.einsum('l,lij->ij',q,internal)
+
+    return quad
 
 ########################## Main ##########################
 
@@ -54,6 +69,9 @@ def main():
 
     nmol = max(frag)
     dipoles = np.zeros((nmol,4))
+    quadrupoles = np.zeros((nmol,3,3))
+    lower_triang = np.zeros((nmol,6))
+    
     for i in range(nmol):
         idx = np.where(frag==i)[0]
         qi = mol.atom_charges()[idx]
@@ -62,8 +80,22 @@ def main():
         dipoles[i,:3] = dipole_moment(chgs[idx],ri,origin)
         dipoles[i,3] = np.linalg.norm(dipoles[i,:3])
 
+        quadrupoles[i,:] = quad_moment(chgs[idx],ri,origin)
+        k=0
+        for l in range(3):
+            for m in range(l+1):
+                lower_triang[i,k] = quadrupoles[i,l,m]
+                k+=1
+
+
+
+
     np.savetxt("mol_dipoles.dat", dipoles, fmt="%8.6f")
     np.savetxt("mol_dipoles_debye.dat", dipoles*AU2DEBYE, fmt="%4.2f")
+
+    np.savetxt("mol_lower_quadrupoles.dat", lower_triang, fmt="%8.6f")
+    np.savetxt("mol_lower_quadrupoles_buckingham.dat", lower_triang*AU2BUCK, fmt="%8.6f")
+
 
 
 if __name__ == "__main__":
